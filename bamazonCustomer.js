@@ -28,25 +28,12 @@ function afterConnection() {
     if (err) throw err;
    
     console.log(res);
-    // connection.end();
-
-
+   
     customerSelection(res);
   });
 }
  
 
- /* function Start() {
-  inquirer
-    .prompt({
-      name: "item",
-      type: "input",
-      message: "What would you like to buy?",
-
-    })
-
-  } */
- 
 
 
 
@@ -140,8 +127,8 @@ function afterConnection() {
           console.log(" ");
           console.log("--------------------------------");
           console.log("Thank you for your purchase of " + quantity + " " + product.product_name + "'s!");
-          console.log("--------------------------------");
-          console.log(" ");
+          console.log("Your Total is $" + product.price_cost * quantity);
+          console.log("Thank you for Shopping with us!");
           console.log(" ");
           process.exit();
 
