@@ -1,8 +1,15 @@
+// mysql db to update products
+
 var mysql = require("mysql");
+
+// inquirer used to ask questions
 var inquirer = require("inquirer");
 
+// the module used for table format for data
+require("console.table");
 
 
+// connection to sql db
 var connection = mysql.createConnection({
   host: "localhost",
 
@@ -23,20 +30,25 @@ connection.connect(function (err) {
   afterConnection();
 });
 
+// View all products
 function afterConnection() {
   connection.query("SELECT * FROM products", function (err, res) {
     if (err) throw err;
    
     console.log(res);
+    console.log(" ");
+    console.log("                The River Kayaking Store");
+    console.log("                   Current Inventory      ");
+    console.log("**************************************************************************");
+    console.table(res);
+    console.log("**************************************************************************");
+    console.log(" ");
+
    
     customerSelection(res);
   });
 }
- 
-
-
-
-
+//  Function for customer product selection
   function customerSelection(inventory) {
     inquirer
       .prompt([
@@ -58,10 +70,12 @@ function afterConnection() {
         var product = checkInventory(itemId, inventory);
         if (product) {
 
+          // runs function for quantity selection afte the product is selected
           customerQuant(product);
 
         }
         else {
+          // make another selection if # isn't in selection list
           console.log(" ");
           console.log(" ");
           console.log("--------------------------------");
@@ -76,6 +90,7 @@ function afterConnection() {
       });
 
   }
+  // Function for quantity selection
 
   function customerQuant(product) {
     inquirer
@@ -96,7 +111,7 @@ function afterConnection() {
         var quantity = parseInt(val.quantity);
 
         if (quantity > product.stock_quantity) {
-
+          // if quantity zero, prompts user to pick another item
           console.log(" ");
           console.log(" ");
           console.log("--------------------------------");
@@ -136,7 +151,7 @@ function afterConnection() {
       );
     }
     
-    // Checking inventory
+    // Checking/Updating inventory
 
     function checkInventory(choiceId, inventory) {
       for (var i = 0; i < inventory.length; i++) {
