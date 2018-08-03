@@ -28,13 +28,14 @@ In this assignment students were asked to create an app that:
 
 ![GitHub Logo](/images/Total.png)
 
-
 #Updated Inventory Stock
 
 ![GitHub Logo](/images/Updated.png)
-Format: ![Alt Text](url)
 
 #Quantity zero alert
 
 ![GitHub Logo](/images/Zero.png)
-Format: ![Alt Text](url)
+
+#Wrong Item Number
+
+![GitHub Logo](/images/wronginventory.png)
