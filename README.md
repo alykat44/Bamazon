@@ -23,3 +23,18 @@ In this assignment students were asked to create an app that:
 1.  Install mysql-- https://www.npm.js.com/package/mysql
 1.  At the command line enter--node bamazonCustomer.js
 
+
+# Purchase with Total
+
+![GitHub Logo](/images/Total.png)
+Format: ![Alt Text](url)
+
+#Updated Inventory Stock
+
+![GitHub Logo](/images/Updated.png)
+Format: ![Alt Text](url)
+
+#Quantity zero alert
+
+![GitHub Logo](/images/Zero.png)
+Format: ![Alt Text](url)
