@@ -27,7 +27,7 @@ In this assignment students were asked to create an app that:
 # Purchase with Total
 
 ![GitHub Logo](/images/Total.png)
-Format: ![Alt Text](url)
+
 
 #Updated Inventory Stock
 
